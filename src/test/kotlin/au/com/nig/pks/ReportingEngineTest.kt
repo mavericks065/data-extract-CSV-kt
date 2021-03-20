@@ -1,6 +1,5 @@
 package au.com.nig.pks
 
-import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Assertions.*
 import org.spekframework.spek2.Spek
 import org.spekframework.spek2.style.specification.describe
@@ -11,10 +10,10 @@ object ReportingEngineTest: Spek({
         it("should send back the number of Females") {
             // Given
             val expectedDetails = listOf(
-                PatientDetails("Blood pressure", "160", LocalDate.of(2019, 12, 9)),
-                PatientDetails("Glucose", "11.1", LocalDate.of(2019, 12, 9)),
-                PatientDetails("Diabetes", "TRUE", LocalDate.of(2019, 12, 9)),
-                PatientDetails("WCC", "120", LocalDate.of(2019, 12, 9))
+                PatientResults("Blood pressure", "160", LocalDate.of(2019, 12, 9)),
+                PatientResults("Glucose", "11.1", LocalDate.of(2019, 12, 9)),
+                PatientResults("Diabetes", "TRUE", LocalDate.of(2019, 12, 9)),
+                PatientResults("WCC", "120", LocalDate.of(2019, 12, 9))
             )
             val patient0 = Patient(1L, 23L, "F", expectedDetails)
             val patient1 = Patient(2L, 30L, "F", expectedDetails)
@@ -28,10 +27,10 @@ object ReportingEngineTest: Spek({
         it("should send back the number of Males when Asked") {
             // Given
             val expectedDetails = listOf(
-                PatientDetails("Blood pressure", "160", LocalDate.of(2019, 12, 9)),
-                PatientDetails("Glucose", "11.1", LocalDate.of(2019, 12, 9)),
-                PatientDetails("Diabetes", "TRUE", LocalDate.of(2019, 12, 9)),
-                PatientDetails("WCC", "120", LocalDate.of(2019, 12, 9))
+                PatientResults("Blood pressure", "160", LocalDate.of(2019, 12, 9)),
+                PatientResults("Glucose", "11.1", LocalDate.of(2019, 12, 9)),
+                PatientResults("Diabetes", "TRUE", LocalDate.of(2019, 12, 9)),
+                PatientResults("WCC", "120", LocalDate.of(2019, 12, 9))
             )
             val patient0 = Patient(1L, 23L, "F", expectedDetails)
             val patient1 = Patient(2L, 30L, "F", expectedDetails)
@@ -49,10 +48,10 @@ object ReportingEngineTest: Spek({
         it("should return the avg age of males") {
             // Given
             val expectedDetails = listOf(
-                PatientDetails("Blood pressure", "160", LocalDate.of(2019, 12, 9)),
-                PatientDetails("Glucose", "11.1", LocalDate.of(2019, 12, 9)),
-                PatientDetails("Diabetes", "TRUE", LocalDate.of(2019, 12, 9)),
-                PatientDetails("WCC", "120", LocalDate.of(2019, 12, 9))
+                PatientResults("Blood pressure", "160", LocalDate.of(2019, 12, 9)),
+                PatientResults("Glucose", "11.1", LocalDate.of(2019, 12, 9)),
+                PatientResults("Diabetes", "TRUE", LocalDate.of(2019, 12, 9)),
+                PatientResults("WCC", "120", LocalDate.of(2019, 12, 9))
             )
             val patient0 = Patient(1L, 23L, "M", expectedDetails)
             val patient1 = Patient(2L, 30L, "F", expectedDetails)
@@ -67,10 +66,10 @@ object ReportingEngineTest: Spek({
         it("should return the avg age of females") {
             // Given
             val expectedDetails = listOf(
-                PatientDetails("Blood pressure", "160", LocalDate.of(2019, 12, 9)),
-                PatientDetails("Glucose", "11.1", LocalDate.of(2019, 12, 9)),
-                PatientDetails("Diabetes", "TRUE", LocalDate.of(2019, 12, 9)),
-                PatientDetails("WCC", "120", LocalDate.of(2019, 12, 9))
+                PatientResults("Blood pressure", "160", LocalDate.of(2019, 12, 9)),
+                PatientResults("Glucose", "11.1", LocalDate.of(2019, 12, 9)),
+                PatientResults("Diabetes", "TRUE", LocalDate.of(2019, 12, 9)),
+                PatientResults("WCC", "120", LocalDate.of(2019, 12, 9))
             )
             val patient0 = Patient(1L, 23L, "F", expectedDetails)
             val patient1 = Patient(2L, 30L, "F", expectedDetails)
