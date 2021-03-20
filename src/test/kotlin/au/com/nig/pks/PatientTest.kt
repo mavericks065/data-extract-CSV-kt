@@ -12,14 +12,12 @@ object PatientTest : Spek({
         it("should transform it into a patient with all its details") {
             // Given
             val expectedDetails = listOf(
-                PatientDetails("Age", "23", LocalDate.of(2019, 12, 9)),
                 PatientDetails("Blood pressure", "160", LocalDate.of(2019, 12, 9)),
-                PatientDetails("Gender", "F", LocalDate.of(2019, 12, 9)),
                 PatientDetails("Glucose", "11.1", LocalDate.of(2019, 12, 9)),
                 PatientDetails("Diabetes", "TRUE", LocalDate.of(2019, 12, 9)),
                 PatientDetails("WCC", "120", LocalDate.of(2019, 12, 9))
             )
-            val expectedPatient = Patient(1L, expectedDetails)
+            val expectedPatient = Patient(1L, 23L, "F", expectedDetails)
 
             val key = "1"
             val currentRelativePath: Path = Paths.get("")
