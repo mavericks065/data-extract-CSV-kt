@@ -8,11 +8,13 @@ import java.util.logging.Level
 val logger = java.util.logging.Logger.getLogger("main")
 
 fun main(args: Array<String>) {
-    val currentRelativePath: Path = Paths.get("")
-    val s = currentRelativePath.toAbsolutePath().toString()
     val filePath = if (args.isNotEmpty())
         args[0]
-    else "$s/src/test/resources/sample.csv"
+    else {
+        val currentRelativePath: Path = Paths.get("")
+        val s = currentRelativePath.toAbsolutePath().toString()
+        "$s/src/test/resources/sample.csv"
+    }
 
     val patients = IO.readFile(filePath)
         .groupBy { it.get("PatientId") }
