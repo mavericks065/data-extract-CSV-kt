@@ -10,4 +10,4 @@ data class Patient(val id: Long, val patientDetails: List<PatientDetails>) {
     }
 }
 
-data class PatientDetails(val test: String, val value: String, val date: LocalDate)
+data class PatientDetails(val detail: String, val value: String, val date: LocalDate)
