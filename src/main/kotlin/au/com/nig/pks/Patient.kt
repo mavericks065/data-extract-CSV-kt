@@ -4,7 +4,7 @@ import org.apache.commons.csv.CSVRecord
 import java.time.LocalDate
 
 data class Patient(val id: Long, val age: Long?, val gender: String?, val patientDetails: List<PatientResults>) {
-
+    // To improve : store a date of birth since age can change
     companion object {
         fun transformToPatient(key: String, records: List<CSVRecord>): Patient {
             val age = records.find { it[2].equals("Age") }?.let { it.get(3)?.toLong() }

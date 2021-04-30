@@ -18,6 +18,10 @@ fun main(args: Array<String>) {
 
     val patients = IO.readFile(filePath)
         .groupBy { it.get("PatientId") }
+//        .map {
+//                Here could be data cleansing --> CSV record making sure we have either
+//                gae or well formatted data etc
+//        }
         .map { (key, records) -> Patient.transformToPatient(key, records) }
 
     val nbOfFemalePatients = ReportingEngine.computePatientsOnGender(patients, "F")

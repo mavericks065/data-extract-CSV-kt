@@ -1,5 +1,6 @@
 package au.com.nig.pks
 
+import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Assertions.*
 import org.spekframework.spek2.Spek
 import org.spekframework.spek2.style.specification.describe
@@ -80,6 +81,21 @@ object ReportingEngineTest: Spek({
 
             // Then
             assertEquals(26.5, result)
+        }
+    }
+
+    describe("Compute average of BCC per gender") {
+        it ("should group per gender and give the average result") {
+            // Given
+            val patient = Patient(1L, 30L, "M", listOf(PatientResults("BCC", "100", LocalDate.of(2019, 12, 9))))
+            val patient1 = Patient(2L, 30L, "F", listOf(PatientResults("BCC", "100", LocalDate.of(2019, 12, 9))))
+            val patient2 = Patient(3L, 30L, "F", listOf(PatientResults("BCC", "300", LocalDate.of(2019, 12, 9))))
+
+            // When
+            val result = ReportingEngine.computeAverageBccOfGender(listOf<Patient>(patient, patient1, patient2), "F")
+
+            // Then
+            assertEquals(200.0, result)
         }
     }
 })
